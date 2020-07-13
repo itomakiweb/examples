@@ -61,7 +61,10 @@ button {
 </style>
 
 
-<button id="openModal">Open modal</button>
+<ol>
+  <li><img class="openModal" src="https://raw.githubusercontent.com/itomakiweb-corp/dev/master/materials/png/101-logo-icon04-2000x2000.png" width="100px" height="100px" /></li>
+  <li><img class="openModal" src="https://raw.githubusercontent.com/itomakiweb-corp/dev/master/materials/png/101-logo-icon02-0512x0512.png" width="100px" height="100px" /></li>
+</ol>
 
 <!-- モーダルエリアここから -->
 <section id="modalArea" class="modalArea">
@@ -69,7 +72,7 @@ button {
   <div class="modalWrapper">
     <div class="modalContents">
       <h1>Here are modal contents!</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <p><img id="imageArea" src="https://raw.githubusercontent.com/itomakiweb-corp/dev/master/materials/png/101-logo-icon04-2000x2000.png" /></p>
     </div>
     <div id="closeModal" class="closeModal">
       ×
@@ -82,7 +85,8 @@ button {
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(function () {
-  $('#openModal').click(function(){
+  $('.openModal').click(function(e){
+      $('#imageArea).attr('src', $(this).attr('attr'));
       $('#modalArea').fadeIn();
   });
   $('#closeModal , #modalBg').click(function(){
